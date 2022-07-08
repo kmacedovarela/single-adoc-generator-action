@@ -24,6 +24,7 @@ runs:
   args:
     - ${{ inputs.file-to-process }}
     - ${{ inputs.generated-file-path }}
+    - ${{ inputs.local }}
 
 
 
