@@ -16,15 +16,15 @@ file_base_name = File.basename(file_to_process)
 output_file = File.join(output_directory,"single-page.adoc")
 
 puts "====="
-puts %x|ls -l 3 /github/workspace/|
+# puts %x|ls -l 3 /github/workspace/|
 puts "Input file: "+ full_file_path
 puts "Output file: "+ output_file
 puts "====="
 
 
 
-# source = File.read full_file_path
-# doc = Asciidoctor.load_file ARGV[0], :safe => :safe, :parse_header_only => true
-# reader = Asciidoctor::PreprocessorReader.new doc, source
-# preprocessed_source = reader.read.gsub(/^include::/, '\\include::')
-# File.open(output_file, 'w') {|f| f.write preprocessed_source }
+source = File.read full_file_path
+doc = Asciidoctor.load_file ARGV[0], :safe => :safe, :parse_header_only => true
+reader = Asciidoctor::PreprocessorReader.new doc, source
+preprocessed_source = reader.read.gsub(/^include::/, '\\include::')
+File.open(output_file, 'w') {|f| f.write preprocessed_source }
