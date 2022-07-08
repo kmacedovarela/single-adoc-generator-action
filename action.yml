@@ -1,0 +1,26 @@
+name: Asciidoc single pages processor
+author: kmacedovarela@gmail.com
+description:
+  A Github action which allows generating a single adoc file with content included in included partials, tags, etc.
+branding:
+  icon: code
+  color: red
+inputs:
+  file-to-process:
+    description: 'The path and name of the adoc file that should be processed'
+    required: true
+  generated-file-path:
+    description: 'Path in the repository to store the generated file'
+    required: true
+    default: '/'
+outputs:
+  generated-file: # id of output
+    description: 'The new adoc file generated after processing.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file-to-process }}
+
+
+
