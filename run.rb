@@ -10,7 +10,7 @@ if !file_to_process || !file_to_process.end_with?(".adoc")
 end
 
 # local_execution ? full_file_path = file_to_process : full_file_path = File.join("/github/workspace/", file_to_process)
-full_file_path = File.join("/github/workspace/", file_to_process)
+full_file_path = File.join("/github/workspace/", full_file_path)
 
 file_base_name = File.basename(file_to_process)
 output_file = File.join(output_directory,"single-page.adoc")
