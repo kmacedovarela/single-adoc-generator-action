@@ -1,6 +1,6 @@
 FROM ruby:2.6-stretch
 
-LABEL "com.github.actions.name"="Asciidoc single pages processor"
+LABEL "com.github.actions.name"="Asciidoc single page generator"
 LABEL "com.github.actions.description"="Allows generating a single adoc file with content included in included partials, tags, etc."
 LABEL "com.github.actions.icon"="book"
 LABEL "com.github.actions.color"="purple"
